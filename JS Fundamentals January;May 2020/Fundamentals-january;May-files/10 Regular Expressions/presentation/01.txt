@@ -1,0 +1,4 @@
+// [A-Za-z0-9_]+    или:
+// \w+
+
+// _ (Underscores) are also word characters!

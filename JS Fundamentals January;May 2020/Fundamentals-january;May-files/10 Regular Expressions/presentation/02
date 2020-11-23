@@ -1,0 +1,7 @@
+//  \d{1,2}-[A-Z]\w{2}-\d{4}
+
+I am born on 30-Dec-1994.
+My father is born on the 9-Jul-1955.
+01-July-2000 is not a valid date.
+12-Jun-1999
+3-Nov-1999

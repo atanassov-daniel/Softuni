@@ -1,0 +1,4 @@
+// [A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]+
+
+valid123@email.bg
+invalid*name@emai1.bg

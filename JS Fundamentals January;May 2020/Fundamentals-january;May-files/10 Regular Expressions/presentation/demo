@@ -1,0 +1,25 @@
+!!! -> '\w+' matches any word character (equal to [a-zA-Z0-9_])
+!!! -> '.' matches any character (except for line terminators)
+
+--------------------------------------------------------------------
+// <\w+>.*<\/\w+>
+// защо не спира на затварящия strongг, а чак на h1-a
+
+Lorem ipsum <h1> dolores <strong> dores </strong> </h1> ovjdfcm
+
+--------------------------------------------------------------------
+тук стойността на първия таг е в numbered capturing group-a -> '()', а във 
+втория таг проверяваме дали стойността е равна на тази 
+група чрез '\1'
+
+// <(\w+)>.*<\/\1>
+
+Lorem ipsum <h1> dolores </h1> ovjdfcm
+
+--------------------------------------------------------------------
+named capturing group-a - името с '(?<tagName>)', достъпваме или
+с '\k<tagName>', или с '\1'
+
+// <(?<tagName>\w+)>.*<\/\k<tagName>>
+
+Lorem ipsum <h1> Hello World </h1> dolores

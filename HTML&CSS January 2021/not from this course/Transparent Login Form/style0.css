@@ -1,0 +1,80 @@
+body {
+    /* background-image: url('https://i.pinimg.com/originals/ae/36/13/ae3613e021f920efb6006c01392b3697.jpg'); */
+
+    /* background: url('/background_image.jpg') no-repeat center center fixed; */
+    background: url('/background_image.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+
+    /* background-image: url('/background_image.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; */
+
+    /* height: 100%; */
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    /* position: relative; */
+}
+
+.form-group {
+    background: rgba(204, 204, 204, 0.5);
+    /* background: #ccc; */
+    /* opacity: 0.5; */
+    /* position:absolute; */
+    padding: 3% 25px;
+    /* padding-right: 25px; */
+
+    /* transform: translateY(70%); */
+
+    width: 40%;
+    height: 35%;
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+    /* overflow: auto; */
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    /* z-index:1; */
+}
+
+.login form label {
+    /* opacity: 1; */
+    display: block;
+}
+
+input[type="submit"] {
+    margin-top: 8px;
+    background: black;
+    color: white;
+    display: block;
+    border: 3px solid black;
+}
+
+input[type="submit"]:hover {
+    color: red;
+    cursor: pointer;
+}
+
+h3 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+input[type="text"] {
+    margin-bottom: 8px;
+    width: 100%;
+    display: block;
+}

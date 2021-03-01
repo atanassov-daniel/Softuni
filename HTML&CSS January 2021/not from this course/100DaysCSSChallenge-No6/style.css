@@ -5,9 +5,10 @@
 * {
 	margin: 0;
 	padding: 0;
+	color: #786450;
 }
 
-body, html{
+html {
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(to top right, #EEBE6C 0%, #CA7C4E 100%);
@@ -44,7 +45,7 @@ body, html{
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: white;
-	border: 2px solid rgb(151, 20, 20);
+	/* border: 2px solid rgb(151, 20, 20); */
 	border-radius: 5px;
 	height: 85%;
 	width: 80%;
@@ -61,6 +62,15 @@ body, html{
 .name {
 	margin-top: 5px;
 	text-align: center;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.job {
+	/* margin-top: -1px; */
+	text-align: center;
+	font-size: 8px;
+	font-weight: normal;
 }
 
 .right {
@@ -68,26 +78,52 @@ body, html{
 	padding: 0;
 	float: right;
 	text-align: center;
-	color: #786450;
 }
 
 img {
 	border-radius: 125px;
-	margin-top: 30px;
+	margin-top: 25px;
 	overflow: hidden;
-	height: 35%;
+	height: 25%;
+	font-size: 11px;
+}
+
+.button {
+	margin: auto;
+	display: block;
+	width: 50%;
+	border-radius: 10px;
+	border: 0.7px solid #786450;
+	background-color: white;
+	padding: 4px 2px;
+	font-size: 8px;
+	font-weight: 550;
+}
+
+#button1 {
+	margin-top: 15%;
+}
+
+#button2 {
+	margin-top: 5%;
+}
+
+.button:hover {
+	background-color: #786450;
+	color: white;
+	transition: 0.6s;
 }
 
 .first {
 	border-top-right-radius: 5px;
 	/*height: 21vh;*/
-	height: 28vh;
+	height: 27.7vh;
 	text-align: center;
 	background-color: #F5E8DF;
 	margin-bottom: 1px;
 	width: 30vw;
-	border: 1px dotted #F5E8DF;
-	transform: translateY(-1.7px) translateX(2px);
+	/* border: 1px dotted #F5E8DF; */
+	/* transform: translateX(2px); */
 }
 
 .right div:hover {
@@ -96,29 +132,29 @@ img {
 }
 
 .second {
-	height: 27vh;
+	height: 27.7vh;
 	width: 30vw;
 	margin-bottom: 1px;
 	background-color: #F5E8DF;
-	border: 1px dotted #F5E8DF;
-	transform: translateY(-2px) translateX(2px);
+	/* border: 1px dotted #F5E8DF; */
+	transform: translateY(-0.1px);
 }
 
 .third {
-	height: 28vh;
+	height: 27.7vh;
 	width: 30vw;
 	margin-bottom: 1px;
 	background-color: #F5E8DF;
-	border: 1px dotted #F5E8DF;
+	/* border: 1px dotted #F5E8DF; */
 	padding-bottom: 2.2px;
 	border-bottom-right-radius: 5px;
-	transform: translateY(-2.5px) translateX(2px);
+	transform: translateY(-0.2px);
 }
 
 .bold-number {
-	font-size: 18px;
+	font-size: 12px;
 	font-weight: 600;
-	transform: translateY(70%);
+	transform: translateY(100%);
 }
 
 .normal-text {

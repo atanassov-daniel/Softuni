@@ -1,0 +1,11 @@
+{
+  "name": "simple-react-demo",
+  "version": "1.0.0",
+  "description": "simple-react-demo",
+  "main": "main.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "author": "Daniel Atanassov",
+  "license": "ISC"
+}

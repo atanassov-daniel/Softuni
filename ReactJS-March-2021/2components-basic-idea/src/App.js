@@ -11,6 +11,7 @@ const booksData = [
   { title: 'The Training Pyramid by Eric Helms', description: 'A book about everything fitness-related and much more' },
   { title: 'Chronicles of Narnia', description: 'Adventure' },
   { title: 'No description' },
+  { description: 'Missing Book' },
 ];
 
 function App() {
@@ -20,7 +21,9 @@ function App() {
         <h1>Book Library</h1>
       </Heading>
 
-      <Counter></Counter>
+      <Counter />
+
+      <Counter />
 
       {/* <BookList /> */}
       <BookList books={booksData} />

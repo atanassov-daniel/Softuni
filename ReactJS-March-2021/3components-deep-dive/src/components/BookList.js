@@ -29,29 +29,16 @@ class BookList extends Component {
 
         const bookElements = this.props.books.map(bookInfo =>
             <Book
+                key={bookInfo._id}
                 title={bookInfo.title}
-                clickHandler={(e) => this.bookClicked(bookInfo.title, e)}
+                description={bookInfo.description}
+                clickHandler={this.bookClicked.bind(this, bookInfo.title)} // this refers to the event object, it gets passed as the last argument to the function
             />
         );
 
         return (
             <div className="book-list">
                 <h2> Our Book Collection</h2>
-                {/* 
-                <Book title="Harry Potter" description="Wizards and stuff" />
-                <Book title="Data Structures and Algorithms in JAVA" description="It will make you cry more than you have cried in your childhood" />
-                <Book title="Programming with JS" description="Always code JS underwater so that no one can see you're crying" />
-                <Book title="The Training Pyramid by Eric Helms" description="A book about everything fitness-related and much more" />
-                */}
-                {/* {this.props.books.map(bookInfo =>
-                    <Book
-                        title={bookInfo.title}
-                        description={bookInfo.description}
-                        // clickHandler={this.bookClicked.bind(this, bookInfo.title)} // this refers to the event object, it gets passed as the last argument to the function
-                        clickHandler={(e) => this.bookClicked(bookInfo.title, e)} // in this case we won't have a problem with the value of this, because the arrow function doesn;t keep its own function context
-
-                    />
-                )} */}
 
                 {bookElements}
             </div>

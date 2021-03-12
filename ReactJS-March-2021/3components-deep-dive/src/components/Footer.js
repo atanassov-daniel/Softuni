@@ -10,11 +10,16 @@ class Footer extends Component {
     render() {
         console.log(this.props.refreshCount);
 
-        return this.props.refreshCount > 0 ?
+        /* return this.props.refreshCount > 0 ?
             <footer>
                 <Message text="All rights reserved &copy;" />
             </footer>
-            : ''
+            : '' */
+        return (
+            <footer>
+                <Message text="All rights reserved &copy;" />
+            </footer>
+        );
     }
 }
 

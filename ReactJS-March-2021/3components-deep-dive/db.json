@@ -1,0 +1,37 @@
+{
+    "books": [
+        {
+            "id": 0,
+            "title": "Harry Potter",
+            "description": "Wizards and stuff"
+        },
+        {
+            "id": 1,
+            "title": "Data Structures and Algorithms in JAVA",
+            "description": "It will make you cry more than you have ever cried in your life"
+        },
+        {
+            "id": 2,
+            "title": "Programming with JS",
+            "description": "Always code JS underwater so that no one can see you\"re crying"
+        },
+        {
+            "id": 3,
+            "title": "The Training Pyramid by Eric Helms",
+            "description": "A book about everything fitness-related and much more"
+        },
+        {
+            "id": 4,
+            "title": "Chronicles of Narnia",
+            "description": "Adventure"
+        },
+        {
+            "id": 5,
+            "title": "No description"
+        },
+        {
+            "id": 6,
+            "description": "Missing Book"
+        }
+    ]
+}

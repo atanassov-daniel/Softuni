@@ -1,35 +1,40 @@
 import { Component } from 'react';
-
+import bookService from '../services/bookService';
 import Book from './Book';
 
 class BookList extends Component {
-    // this refers to the current instance of BookList
-
-    // за да получам props задължително трябва да си декларираме constructor() {}
-    /* constructor(props) {
+    constructor(props) {
         super(props);
-    } */
+
+        this.state = { books: [] }; // we should always habe a default state
+    }
 
     bookClicked(title, e) { // the event object gets passed in last
-        console.log(e); // Harry Potter
-        console.log("title:" + title); // title:[object Object]
-        console.log(`The book ${title} has successfully been added!`); // The book [object Object]...
+        console.log(e);
+        console.log("title:" + title);
+        console.log(`The book ${title} has successfully been added!`);
     }
-    /* bookClicked(e, title) { // the event object gets passed in last
-        console.log(e); // Harry Potter
-        console.log("title:" + title); // title:[object Object]
-        console.log(`The book ${title} has successfully been added!`); // The book [object Object]...
-    } */
+
+    componentDidMount() {
+        bookService.getAll()
+            .then(booksData => {
+                this.setState(() => ({ books: booksData }));
+            });
+        /* fetch('http://localhost:3000/books')
+            .then(resp => resp.json())
+            .then(booksData => {
+                this.setState(() => ({ books: booksData }));
+            }); */
+    }
 
     render() {
-        /* const bookElements = [
-            <Book title="langaLunga" />,
-            <Book title="langaLunga" />,
-        ]; */
+        if (this.state.books.length === 0) {
+            return <strong>Loading books...</strong>;
+        }
 
-        const bookElements = this.props.books.map(bookInfo =>
+        const bookElements = this.state.books.map(bookInfo =>
             <Book
-                key={bookInfo._id}
+                key={bookInfo.id}
                 title={bookInfo.title}
                 description={bookInfo.description}
                 clickHandler={this.bookClicked.bind(this, bookInfo.title)} // this refers to the event object, it gets passed as the last argument to the function

@@ -15,18 +15,21 @@ class Posts extends Component {
 
         fetch(url)
             .then(resp => resp.json())
-            .then(data => this.setState(() => ({ posts: data })));
+            .then(data => this.setState(() => ({ posts: data })))
+            .catch(error => console.log(error));
     }
 
     render() {
         return (
             <div className="Posts">
-
-                {/* <Post /> */}
-
                 {this.state.posts.length === 0 ?
-                    'Loading posts...'
-                    : this.state.posts.map(postInfo => <Post key={postInfo.id} data={postInfo} />)}
+                    <strong style={{ fontSize: "5em", textAlign: "center" }}>Loading posts...</strong>
+                    : this.state.posts.map(postInfo =>
+                        <Post
+                            key={postInfo.id}
+                            postInfo={postInfo}
+                        />
+                    )}
             </div>
         );
     }

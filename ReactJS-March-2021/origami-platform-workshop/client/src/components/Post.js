@@ -1,23 +1,20 @@
 import { Component } from 'react';
 
 class Post extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
+        const postInfo = this.props.postInfo;
+
         return (
             <div className="Post">
                 <img src="./blue-origami-bird.png" alt="logo" />
 
                 <p className="description">
-                    {this.props.data.description || 'No Description Provided'}
+                    {postInfo.description || 'No Description Provided'}
                 </p>
 
                 <div>
                     <span>
-                        <small>Author: </small>
-                        {this.props.data.author || 'No Author Provided'}
+                        <small>Author: </small> {postInfo.author || 'No Author Provided'}
                     </span>
                 </div>
             </div>

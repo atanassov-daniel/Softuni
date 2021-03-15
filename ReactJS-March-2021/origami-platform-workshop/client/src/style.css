@@ -1,12 +1,12 @@
 /* App Styles*/
 
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     font-family: 'Indie- Flower', cursive;
-}
+} */
 
 .App {
     max-width: 100%;
@@ -28,7 +28,8 @@
 
 .Navigation {
     width: 100%;
-    height: 14vh;
+    /* height: 14vh; */
+    height: 14%;
     background-color: #234465;
     color: white;
     position: fixed;
@@ -36,6 +37,11 @@
     /* left: 0; so that it doesn't start a little from the left */
     border-bottom: 2px solid #ffa000;
     border-top: 2px solid #ffa000;
+}
+
+.Nav-logo {
+    min-height: 90%;
+    min-width: 90%;
 }
 
 /* Navigation Styles*/
@@ -56,6 +62,7 @@ nav .listItem,
 footer .listItem {
     display: inline-block;
     height: auto;
+    /* height: 100%; */
     margin-right: 2%;
     cursor: pointer;
     padding: 0.5%;
@@ -148,7 +155,7 @@ aside .listItem:hover {
     margin-bottom: 5%;
 }
 
-h1 {
+.Main h1 {
     text-align: center;
     color: #234465;
     text-decoration: underline;
@@ -163,8 +170,10 @@ h1 {
 
 .Posts {
     width: 100%;
-    /* border:1px solid red; */
-    height: 45vh;
+    border: 1px solid red;
+    /* height: 45vh; */
+    height: 100%;
+    text-align: center;
 }
 
 /* Posts Styles */

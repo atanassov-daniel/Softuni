@@ -1,10 +1,16 @@
-import { Component } from 'react'
+import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export class NavLinks extends Component {
     render() {
         return (
             <>
-                <li className="listItem"><a href="#posts/1">Going to 1</a></li>
+                <li className="listItem"><Link to="/" className="link-fock">Home</Link></li>
+                <li className="listItem"><Link to="/about">About</Link></li>
+                <li className="listItem"><Link to="/contact-us">Contact Us</Link></li>
+
+                <li className="listItem"><Link to="/listings/posts/1">Going to 1</Link></li>
+
                 <li className="listItem"><a href="#posts/2">Going to 2</a></li>
                 <li className="listItem"><a href="#posts/3">Going to 3</a></li>
                 <li className="listItem"><a href="#posts/4">Going to 4</a></li>

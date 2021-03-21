@@ -1,9 +1,18 @@
-import React from 'react';
+import { Redirect, useHistory } from 'react-router-dom';
 
 const About = ({
     match
 }) => {
-    console.log(match);
+    const history = useHistory();
+
+    if (Math.random() > 0.5) {
+        history.push('/');
+
+        return null;
+    }
+    /* if (Math.random() > 0.5) {
+            return <Redirect to="/" />
+    } */
 
     return (
         <h1>About Page</h1>

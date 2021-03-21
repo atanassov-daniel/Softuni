@@ -9,7 +9,7 @@ export class NavLinks extends Component {
                 <li className="listItem"><Link to="/about">About</Link></li>
                 <li className="listItem"><Link to="/contact-us">Contact Us</Link></li>
 
-                <li className="listItem"><Link to="/listings/posts/1">Going to 1</Link></li>
+                <li className="listItem"><Link to="/listings/posts/1">Post 1 Details </Link></li>
 
                 <li className="listItem"><a href="#posts/2">Going to 2</a></li>
                 <li className="listItem"><a href="#posts/3">Going to 3</a></li>

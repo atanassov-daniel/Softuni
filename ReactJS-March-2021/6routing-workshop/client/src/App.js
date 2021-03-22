@@ -8,9 +8,10 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
-import CreatePet from './components/CreatePet';
+import AddPet from './components/AddPet';
 import MyPets from './components/MyPets';
 import DeletePet from './components/DeletePet';
+import Details from './components/Details';
 
 function App() {
   return (
@@ -23,9 +24,10 @@ function App() {
           <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
-          <Route path="/create-pet" exact component={CreatePet} />
+          <Route path="/add-pet" exact component={AddPet} />
           <Route path="/my-pets" exact component={MyPets} />
           <Route path="/delete-pet" exact component={DeletePet} />
+          <Route path="/details/:id" component={Details} />
 
           {/* <Route component={PageNotFound} /> */}
         </Switch>

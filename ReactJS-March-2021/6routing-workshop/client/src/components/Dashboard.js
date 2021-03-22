@@ -1,58 +1,54 @@
+import { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { getAll } from '../services/petsService';
+//!!!! should only show pets that one is not the creator of
+//TODO see if I can abstract the other pet as a component
 
-const Dashboard = () => {
-    return (
-        <section className="dashboard">
-            <h1>Dashboard</h1>
-            <nav className="navbar">
-                <ul>
-                    <li><Link to="/all">All</Link></li>
-                    <li><Link to="/cats">Cats</Link></li>
-                    <li><Link to="/dogs">Dogs</Link></li>
-                    <li><Link to="/parrots">Parrots</Link></li>
-                    <li><Link to="/reptiles">Reptiles</Link></li>
-                    <li><Link to="/other">Other</Link></li>
+class Dashboard extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { pets: [] };
+    }
+
+    componentDidMount() {
+        getAll()
+            .then(pets => this.setState(() => ({ pets })))
+            .catch(error => console.log(error));
+    }
+
+    render() {
+        return (
+            <section className="dashboard">
+                <h1>Dashboard</h1>
+                <nav className="navbar">
+                    <ul>
+                        <li><Link to="/all">All</Link></li>
+                        <li><Link to="/cats">Cats</Link></li>
+                        <li><Link to="/dogs">Dogs</Link></li>
+                        <li><Link to="/parrots">Parrots</Link></li>
+                        <li><Link to="/reptiles">Reptiles</Link></li>
+                        <li><Link to="/other">Other</Link></li>
+                    </ul>
+                </nav>
+                <ul className="other-pets-list">
+                    {this.state.pets.map(({ id, name, description, imageURL, likes, category }) =>
+                        <li className="otherPet" key={id}>
+                            <h3>Name: {name}</h3>
+                            <p>Category: {category}</p>
+                            <p className="img"><img src={imageURL} alt="pet" /></p>
+                            <p className="description">{description}</p>
+                            <div className="pet-info">
+                                <Link to=""><button className="button"><i className="fas fa-heart"></i> Pet</button></Link>
+                                <Link to={`/details/${id}`}><button className="button">Details</button></Link>
+                                <i className="fas fa-heart"></i> <span> {likes}</span>
+                            </div>
+                        </li>
+                    )}
                 </ul>
-            </nav>
-            <ul className="other-pets-list">
-                <li className="otherPet">
-                    <h3>Name: Gosho</h3>
-                    <p>Category: Cat</p>
-                    <p className="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" alt="pet" /></p>
-                    <p className="description">This is not my cat Gosho</p>
-                    <div className="pet-info">
-                        <a href="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></a>
-                        <a href="#"><button className="button">Details</button></a>
-                        <i className="fas fa-heart"></i> <span> 2</span>
-                    </div>
-                </li>
-                <li className="otherPet">
-                    <h3>Name: Gosho</h3>
-                    <p>Category: Cat</p>
-                    <p className="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" alt="pet" /></p>
-                    <p className="description">This is not my cat Gosho</p>
-                    <div className="pet-info">
-                        <a href="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></a>
-                        <a href="#"><button className="button">Details</button></a>
-                        <i className="fas fa-heart"></i> <span> 2</span>
-                    </div>
-
-                </li>
-                <li className="otherPet">
-                    <h3>Name: Kiro</h3>
-                    <p>Category: Dog</p>
-                    <p className="img"><img src="http://www.stickpng.com/assets/images/580b57fbd9996e24bc43bbde.png" alt="pet" />
-                    </p>
-                    <p className="description">This is my dog Kiro</p>
-                    <div className="pet-info">
-                        <a href="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></a>
-                        <a href="#"><button className="button">Details</button></a>
-                        <i className="fas fa-heart"></i> <span> 4</span>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    );
+            </section>
+        );
+    }
 }
 
 export default Dashboard
